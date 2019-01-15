@@ -13,10 +13,12 @@
 
 
 /* Validation Styles */
+/* This sets the input, select, and textarea element with a pseudo class called focus with a background color of red blue green of 245, 245, 140 */
 input:focus select:focus textarea:focus {
     background-color: rgb(245, 245, 140);
 }
 
+/* This sets the input element with a id of fnBox, lnBox, addBox, mailBox, phoneBox, and idBox with a pseudo class called focus and valid with a background color of red blue green set to 220, 255, 220 with a url of a photo called "cg_valid.png" with a right and contain */
 input#fnBox:focus:valid,
 input#lnBox:focus:valid,
 input#addBox:focus:valid,
@@ -26,6 +28,7 @@ input#idBox:focus:valid {
     background-color: rgb(220, 255, 220) url(cg_valid.png) right/contain;
 }
 
+/* This sets the input element with a id of fnBox, lnBox, addBox, mailBox, phoneBox, and idBox with a pseudo class called focus and invalid with a background color of red blue green set to 255, 232, 232 with a url of a photo called "cg_invalid.png" with a right and contain */
 input#fnBox:focus:invalid,
 input#lnBox:focus:invalid,
 input#addBox:focus:invalid,

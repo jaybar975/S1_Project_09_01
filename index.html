@@ -21,6 +21,7 @@
     <link href="cg_base.css" rel="stylesheet" />
     <link href="cg_styles.css" rel="stylesheet" />
     <link rel="stylesheet" href="cg_validate.css" />
+    <link rel="stylesheet" href="cg_forms.css" />
     <script src="cg_script.js"></script>
 </head>
 
@@ -53,51 +54,69 @@
     <section>
         <h1>Conference Registration Form</h1>
         <p>Required Item (*)</p>
-        <form action="http://www.example.com/cg/register" method="POST"></form>
-        <label for="title">Title</label>
-        <input type="text" id="titleBox" list="titleList" />
-        <datalist id="titleList">
-            <option value="Mr.">
-            <option value="Mrs.">
-            <option value="Ms.">
-            <option value="Prof.">
-            <option value="Dr.">
-            <option value="Assist. Prof.">
-            <option value="Assoc. Prof.">
-        </datalist>
-        <label for="fname">First Name*</label>
-        <input type="text" id="fnBox" required />
+        <!-- This creates the form element with a action to a website called "http://www.example.com/cg/register" with a method of "post" -->
+        <form action="http://www.example.com/cg/register" method="POST">
+            <!-- This creates the label element with a for called "titleBox" named Title -->
+            <label for="titleBox">Title</label>
+            <!-- This creates the input element with a type of text a name called Title an id called titleBox and a list called titleList -->
+            <input type="text" name="Title" id="titleBox" list="titleList" />
+            <!-- This creates the datalist with a id of titleList -->
+            <datalist id="titleList">
+                <!-- This creates the option element with a value called "Mr." -->
+                <option value="Mr."></option>
+                <!-- This creates the option element with a value called "Mrs." -->
+                <option value="Mrs."></option>
+                <!-- This creates the option element with a value called "Ms." -->
+                <option value="Ms."></option>
+                <!-- This creates the option element with a value called "Prof." -->
+                <option value="Prof."></option>
+                <!-- This creates the option element with a value called "Dr." -->
+                <option value="Dr."></option>
+                <!-- This creates the option element with a value called "Assist. Prof." -->
+                <option value="Assist. Prof."></option>
+                <!-- This creates the option element with a value called "Assoc. Prof." -->
+                <option value="Assoc. Prof."></option>
+            </datalist>
+            <!-- This creates the label element with a for called "fnBox" and its called First Name* -->
+            <label for="fnBox">First Name*</label>
+            <!-- This creates the input element with a type of "text" a name of "first" a id of "fnBox" and it has to be "required" to fill out the information -->
+            <input type="text" name="First" id="fnBox" required />
+            <!-- This creates the label element with a for called "lnBox" its called Last Name* -->
+            <label for="lnBox">Last Name*</label>
+            <!-- This creates the input element with a type of "text" a name called "Last" a id called "lnBox" and it has to be "required' to fill out this part of the information" -->
+            <input type="text" name="Last" id="lnBox" required />
+            <!-- This creates the label element with a for called "addBox" and its called Address*  -->
+            <label for="addBox">Address*</label>
+            <!-- This creates the input element with a type called "text" a id called "addBox" a name called Address and its "required" t fill out this part of information  -->
+            <input type"text" id="addBox" name="Address" required />
+            <!-- This creates the label element with a for called "groupBox" and its called Company or University -->
+            <label for="groupBox">Company or University</label>
+            <!-- This creates the input element with a type called "text" a name called "Company" and a id called "groupBox" -->
+            <input type="text" name="Company" id="groupBox" />
+            <!-- This creates the lable element with a for called "mailBox" and its called Email* -->
+            <label for="mailBox">Email*</label>
+            <!-- This creates the input element with a type called "email" a name called "Email" a id called "mailBox" and it has to be "required" to fill out this type of information -->
+            <input type="email" name="Email" id="mailBox" required />
+            <!-- This creates the label element with a for called "phoneBox" and its called Phone Number -->
+            <label for="phoneBox">Phone Number*</label>
+            <!-- This creates the input element with a type called "tel" a name called "Number" a id called "phoneBox" its required to fill out this type of information a placeholder that says "(nnn)nnn-nnnn" and it has a pattern that says "^d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$" -->
+            <input type="tel" name="Number" id="phoneBox" required placeholder="(nnn)nnn-nnnn" pattern="^d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$" />
+            <!-- This creates the lable element with  for called "idBox" and its called "ACGIP Membership Number" -->
+            <label for="idBox">ACGIP Membership Number</label>
+            <!-- This creates the input element with a type called "text" a name called "ACGIP MN" a id called "idBox" a placeholder called "acgip-nnnnnn" and a pattern called "^acgip\-\d{6}$" -->
+            <input type="text" name="ACGIP MN" id="idBox" placeholder="acgip-nnnnnn" pattern="^acgip\-\d{6}$" />
 
-        <label for="lname">Last Name*</label>
-        <input type="text" id="lnBox" required />
-
-        <label for="address">Address*</label>
-        <textarea id="addBox" required></textarea>
-
-        <label for="cou">Company or University</label>
-        <input type="text" id="groupBox" />
-
-        <label for="email">Email*</label>
-        <input type="email" id="mailBox" required />
-
-        <label for="phoneNumber">Phone Number*</label>
-        <input type="tel" id="phoneBox" required placeholder="(nnn)nnn-nnnn" pattern="^d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$" />
-
-        <label for="membershipNumber">ACGIP Membership Number</label>
-        <input type="text" id="idBox" placeholder="acgip-nnnnnn" pattern="^acgip\-\d{6}$" />
-
-        <label for="regList">Registration Category</label>
-        <select id="regList">
-            <option name="registerType" value="member">ACGIP Member ($695)</option>
-            <option name="registerType" value="nonmember">Non-Member ($795)</option>
-            <option name="registerType" value="student">Student ($310)</option>
-            <option name="registerType" value="poster">Poster ($95)</option>
-            <option name="registerType" value="guest">Guest ($35)</option>
-        </select>
-
-        <p>
-            <input type="submit" value="continue" />
-        </p>
+            <label for="regList">Registration Category</label>
+            <select id="regList">
+                <option name="registerType" value="member">ACGIP Member ($695)</option>
+                <option name="registerType" value="nonmember">Non-Member ($795)</option>
+                <option name="registerType" value="student">Student ($310)</option>
+                <option name="registerType" value="poster">Poster ($95)</option>
+                <option name="registerType" value="guest">Guest ($35)</option>
+            </select>
+            <p>
+                <input type="submit" value="continue" />
+            </p>
         </form>
 
     </section>
